@@ -1,0 +1,44 @@
+{
+    "kind": "walletobjects#offerClass",
+    "id": "{{issuerId}}.{{offerClass}}",
+    "version": "1",
+    "issuerName": "{{issuerName}}",
+    "allowMultipleUsersPerObject": true,
+    "reviewStatus": "draft",
+    "imageModulesData": [
+        {
+            "mainImage": {
+                "kind": "walletobjects#image",
+                "sourceUri": {
+                    "kind": "walletobjects#uri",
+                    "uri": "{{mainImageURL}}}}"
+                }
+            }
+        }
+    ],
+    "textModulesData": [
+        {
+            "header": "Details",
+            "body": "{{{offerDetails}}}"
+        }
+    ],
+    "hexBackgroundColor": "#ffffff",
+	"heroImage": {
+        "kind": "walletobjects#image",
+        "sourceUri": {
+            "kind": "walletobjects#uri",
+            "uri": "{{heroImageURL}}"
+        }
+    },
+    "multipleDevicesAndHoldersAllowedStatus": "multipleHolders",
+    "title": "{{title}}",
+    "redemptionChannel": "both",
+    "provider": "{{issuerName}}",
+    "titleImage": {
+        "kind": "walletobjects#image",
+        "sourceUri": {
+            "kind": "walletobjects#uri",
+            "uri": "{{titleImageURL}}"
+        }
+    }
+}

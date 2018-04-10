@@ -1,0 +1,7 @@
+{
+	"issuerId" : "3264991887156718182",
+	"accountEmail" : "usps-offer-poc@usps-offer-poc.iam.gserviceaccount.com",
+    "offerClass" : "TestClass1",
+    "offerObject" : "TestObject1",
+    "issuerName" : "Acme Inc."
+}

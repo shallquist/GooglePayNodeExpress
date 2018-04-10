@@ -1,2 +1,14 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<br>
+<form action="/postClass" method="post">
+    <input type="submit" value="{{OfferClass}}" id="offerClass">
+</form>
+
+<br/>
+
+<div style="display:inline" id="offersave">
+    <g:savetoandroidpay jwt="{{jwt}}" onsuccess="successHandler"
+        onfailure="failureHandler" size="small" theme="light" ></g:savetoandroidpay>
+</div>
+
