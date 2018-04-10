@@ -2,3 +2,4 @@
 node_modules/
 privatekey.json
 gpaySettings.json
+.DS_Store
