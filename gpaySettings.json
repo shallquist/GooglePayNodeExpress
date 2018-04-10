@@ -3,5 +3,10 @@
 	"accountEmail" : "usps-offer-poc@usps-offer-poc.iam.gserviceaccount.com",
     "offerClass" : "TestClass1",
     "offerObject" : "TestObject1",
-    "issuerName" : "Acme Inc."
+    "issuerName" : "Acme Inc.",
+    "title" : "Discount",
+    "offerDetails" : "50% Off all Shoes!",
+    "mainImageURL":"http://farm4.staticflickr.com/3738/12440799783_3dc3c20606_b.jpg",
+    "heroImageURL":"http://farm4.staticflickr.com/3738/12440799783_3dc3c20606_b.jpg",
+    "titleImageURL":"http://farm4.staticflickr.com/3723/11177041115_6e6a3b6f49_o.jpg"
 }

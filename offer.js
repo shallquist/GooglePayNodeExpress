@@ -21,20 +21,20 @@ exports.generateJWT = function() {
 	return signature;
 };
 
-exports.authJWT = function() {
-    const jwtClient = new google.auth.JWT({
-      email: key.client_email,
-      key: key.private_key,
-      scopes: ['https://www.googleapis.com/auth/wallet_object.issuer']
-    });
-
-    jwtClient.getAccessToken()
-        .then(response => {
-            console.log(response);
-        }).catch(error => {
-            console.error;
-        });
-};
+//exports.authJWT = function() {
+//    const jwtClient = new google.auth.JWT({
+//      email: key.client_email,
+//      key: key.private_key,
+//      scopes: ['https://www.googleapis.com/auth/wallet_object.issuer']
+//    });
+//
+//    jwtClient.getAccessToken()
+//        .then(response => {
+//            console.log(response);
+//        }).catch(error => {
+//            console.error;
+//        });
+//};
 
 
 

@@ -12,9 +12,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/postClass', function(req, res, next) {
-  var offer = require("../offer");
+  var offer = require("../offerClass");
 
-  offer.authJWT();
+  res.render('OfferClass', settings, function(err, json) {
+		console.log(json);
+	});
     
   res.render('index', { title: 'Express', OfferClass: "Submitted" });
 });
