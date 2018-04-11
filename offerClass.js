@@ -1,19 +1,23 @@
 
-
+var https = require('https');
+const {google} = require('googleapis');
+var key = require("./privatekey.json");
 
 exports.saveClass = function (classData) {
+    const postData = classData;//JSON.stringify(classData);
+    
     const options = {
-      protocol: 'https',
+//      protocol: 'https',
       hostname: 'www.googleapis.com',
       path: '/walletobjects/v1/offerClass?strict=true',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(classData)
+        'Content-Length': Buffer.byteLength(postData)
       }
     };
     
-    const req = http.request(options, (res) => {
+    const req = https.request(options, (res) => {
       console.log(`STATUS: ${res.statusCode}`);
       console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
       res.setEncoding('utf8');
@@ -30,10 +34,11 @@ exports.saveClass = function (classData) {
     });
 
     getAuth().then(token => {
-        options.auth = {'bearer' : 'Bearer ' + token };
-        
+//        options.auth = {'Bearer' : token.token };
+//        options.headers.Authorization = "Bearer " + token.token;
+        req.setHeader('Authorization', "Bearer " + token.token);
         // write data to request body
-        req.write(classData);
+        req.write(postData);
         req.end();
     }).catch(error => {
         console.error;
@@ -41,6 +46,7 @@ exports.saveClass = function (classData) {
 };
 
 function getAuth() {
+
     const jwtClient = new google.auth.JWT({
       email: key.client_email,
       key: key.private_key,

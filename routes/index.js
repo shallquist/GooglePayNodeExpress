@@ -23,8 +23,8 @@ router.post('/postClass', function(req, res, next) {
       }
       else {
         console.log(json);
-        var offer = JSON.parse(json);
-        offer.saveClass(offer);
+//        var offerJson = JSON.parse(json);
+        offer.saveClass(json);
       }
 	});
     
