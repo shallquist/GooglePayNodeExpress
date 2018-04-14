@@ -2,10 +2,11 @@ var express = require('express');
 //var path = require('path');
 var router = express.Router();
 var settings = require("../gpaySettings.json");
+var title = "Google Pay Offer Object";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', OfferClass: settings.offerClass });
+  res.render('index', { title: title, OfferClass: settings.offerClass, showGPay:false });
 });
 
 router.post('/postClass', function(req, res, next) {
@@ -25,7 +26,7 @@ router.post('/postClass', function(req, res, next) {
       }
       
       var jwt = offerObject.generateJWT(req.headers.host);
-      res.render('index', { title: 'Express', OfferClass: "Submitted", jwt: jwt });
+      res.render('index', { title: title, OfferClass: "Submitted", jwt: jwt, showGPay:true });
 	});
     
 //  res.render('index', { title: 'Express', OfferClass: "Submitted" });
