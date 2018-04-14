@@ -1,10 +1,7 @@
 var express = require('express');
-var path = require('path');
+//var path = require('path');
 var router = express.Router();
-
-var baseDir = path.parse(__dirname).dir;
 var settings = require("../gpaySettings.json");
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,7 +9,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/postClass', function(req, res, next) {
-  var offer = require("../offerClass");
+  var offerClass = require("../offerClass");
+  var offerObject = require("../offerObject");
   
   var params = settings;
   settings.layout = false;
@@ -23,12 +21,14 @@ router.post('/postClass', function(req, res, next) {
       }
       else {
         console.log(json);
-//        var offerJson = JSON.parse(json);
-        offer.saveClass(json);
+        offerClass.saveClass(json);
       }
+      
+      var jwt = offerObject.generateJWT(req.headers.host);
+      res.render('index', { title: 'Express', OfferClass: "Submitted", jwt: jwt });
 	});
     
-  res.render('index', { title: 'Express', OfferClass: "Submitted" });
+//  res.render('index', { title: 'Express', OfferClass: "Submitted" });
 });
 
 module.exports = router;

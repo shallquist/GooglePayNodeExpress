@@ -15,12 +15,8 @@ var failureHandler = function(params){
 };
 
 
-document.onload = function() {
-//    document.getElementById("offerClass").addEventListener("click", function(){
-//        
-//    });
-    
+$(window).ready(function(){
     script = document.createElement("script");
     script.src = "https://apis.google.com/js/plusone.js";
     document.head.appendChild(script);
-};
+});
